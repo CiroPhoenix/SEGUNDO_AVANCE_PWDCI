@@ -86,7 +86,7 @@ form.addEventListener("submit", e=>{
     parrafo.innerHTML = warnings
    }else{
     parrafo.innerHTML = "Enviado"
-    location.href='index.html';
+    location.href='index.php';
    }
 
 

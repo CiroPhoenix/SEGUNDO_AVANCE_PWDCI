@@ -1,18 +1,20 @@
 
 CREATE database IF NOT exists Proyecto_BDM;
 use Proyecto_BDM;
+DROP DATABASE proyecto_bdm;
 /*CREATE TABLE IF NOT EXISTS `Usuario`*/
 
 /*DROP TABLE IF EXISTS `usuario`;*/
 
 CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`usuario` (
   `ID_Usuario` INT NOT NULL AUTO_INCREMENT,
-`Nickname_Usuario` VARCHAR(45) NOT NULL,
+
   `Foto_Usuario` BLOB NULL,
   `Nombre_Usuario` VARCHAR(45) NOT NULL,
   `NomPatr_Usuario` VARCHAR(45) NOT NULL,
   `NomMatr_Usuario` VARCHAR(45) NOT NULL,
-  `Genero_Usuario` VARCHAR(1) NOT NULL,
+  `Rol_Usuario` ENUM ('Maestro','Estudiante'),
+  `Genero_Usuario` ENUM ('Masculino','Femenino'),
   `Nacimiento_Usuario` DATETIME NOT NULL,
   `Correo_Usuario` VARCHAR(45) NOT NULL,
   `Contrasena_Usuario` VARCHAR(45) NOT NULL,
@@ -20,15 +22,24 @@ CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`usuario` (
   `Nombre_usuario_Usuario` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`ID_Usuario`));
   
+  drop table usuario;
+ select * from usuario;
   
+  
+  ALTER TABLE `proyecto_bdm`.`usuario` MODIFY `Foto_Usuario` LONGBLOB;
   
   
   INSERT INTO `proyecto_bdm`.`usuario` (`Nombre_Usuario`, `NomPatr_Usuario`, `NomMatr_Usuario`, `Genero_Usuario`, `Nacimiento_Usuario`, `Correo_Usuario`, `Contrasena_Usuario`, `Nombre_usuario_Usuario`) VALUES ('Julio', 'Zepeda', 'Soraya', 'M', '1999-01-01 00:00:00', 'juliozep@gmail.com', 'Admin?123', 'Admin');
   
   
 ALTER TABLE `proyecto_bdm`.`usuario` ADD `Nickname_Usuario` VARCHAR(45) NOT NULL;
+
+
+
+
+alter table `proyecto_bdm`.`usuario` drop column `Nickname_Usuario`;
   
-  select * from usuario;
+  select * from `proyecto_bdm`.`usuario`;
   
   
 CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`alumno` (
