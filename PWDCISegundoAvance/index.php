@@ -117,6 +117,7 @@ if(!isset($_SESSION['Nombre_Usuario'])){
       <p> Estudiante</p>
     <br>
       <h3><?php echo $_SESSION['Nombre_Usuario']; ?></h3>
+    
       
     </div>
     <hr>

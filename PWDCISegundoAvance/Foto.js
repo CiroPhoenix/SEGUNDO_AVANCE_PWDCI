@@ -1,4 +1,6 @@
 
+
+
 document.getElementById('Foto_Usuario').onchange=function(e){
 
   let reader=new FileReader();
@@ -19,12 +21,12 @@ reader.onload=function(){
 }
 
 }
-
-const usuario = document.getElementById("nombre_usuario")
-const usuario_paterno = document.getElementById("nombre_usuario_paterno")
-const usuario_materno= document.getElementById("nombre_usuario_materno")
-const genero= document.getElementById("genero")
-const rol= document.getElementById("rol")
+/*
+const usuario = document.getElementById("Nombre_Usuario")
+const usuario_paterno = document.getElementById("NomPatr_Usuario")
+const usuario_materno= document.getElementById("NomMatr_Usuario")
+const genero= document.getElementById("Genero_Usuario")
+const rol= document.getElementById("Rol_Usuario")
 const email = document.getElementById("Correo_Usuario")
 const pass = document.getElementById("Contrasena_Usuario")
 const form = document.getElementById("form")
@@ -84,9 +86,6 @@ form.addEventListener("submit", e=>{
 
    if(entrar){
     parrafo.innerHTML = warnings
-   }else{
-    parrafo.innerHTML = "Enviado"
-    location.href='index.php';
    }
 
 
@@ -95,4 +94,5 @@ form.addEventListener("submit", e=>{
 
 
 })
+*/
 

@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`usuario` (
   
 
   SELECT * FROM usuario WHERE 
-Contrasena_Usuario='tanner';
+Contrasena_Usuario='John4';
 
  SELECT * FROM usuario WHERE Nombre_Usuario='Jameson'and
 Rol_Usuario='Maestro';
@@ -46,7 +46,7 @@ ALTER TABLE `proyecto_bdm`.`usuario` ADD `Nickname_Usuario` VARCHAR(45) NOT NULL
 
 ALTER TABLE `proyecto_bdm`.`usuario` MODIFY COLUMN`Contrasena_Usuario` VARCHAR(45);
 
-select * from `proyecto_bdm`.`usuario` where `Password_Usuario` ='kitty';
+select * from `proyecto_bdm`.`usuario` where `Password_Usuario` ='John4';
 
 
 alter table `proyecto_bdm`.`usuario` drop column `Password_Usuario`;

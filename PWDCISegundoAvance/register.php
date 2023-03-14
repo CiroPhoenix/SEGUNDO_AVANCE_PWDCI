@@ -68,6 +68,7 @@ if(isset($_POST["submit"])){
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,7 +204,7 @@ if(isset($_POST["submit"])){
 
         </div>
     </form>
-    <script src="js/app.js"></script>
+    
 </body>
 
 </html>

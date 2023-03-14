@@ -1,3 +1,16 @@
+
+<?php 
+session_start();
+
+if(!isset($_SESSION['Nombre_Usuario'])){
+    header("Location: login.php");
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +37,7 @@
 <body style="background-image: url('img/SaturnoBackground.jpg');">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +46,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -77,7 +90,7 @@
               <img src="img/ProfilePicture.png">
               <p>Maestro</p>
               <br>
-              <h3>Carlos Villagran</h3>
+              <h3><h3><?php echo $_SESSION['Nombre_Usuario']; ?></h3></h3>
             </div>
             <hr>
         
@@ -99,7 +112,7 @@
             </a>
         
         
-              <a href="#" class="sub-menu-link">
+              <a href="logout.php" class="sub-menu-link">
         
                 <img src="img/Logout.png">
                 <p>Cerrar Sesion</p>
