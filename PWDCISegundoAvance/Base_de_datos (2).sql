@@ -6,27 +6,37 @@ DROP DATABASE proyecto_bdm;
 
 /*DROP TABLE IF EXISTS `usuario`;*/
 
+drop table usuario;
 CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`usuario` (
-  `ID_Usuario` INT NOT NULL AUTO_INCREMENT,
-
+   `ID_Usuario` INT NOT NULL AUTO_INCREMENT,
   `Foto_Usuario` BLOB NULL,
   `Nombre_Usuario` VARCHAR(45) NOT NULL,
   `NomPatr_Usuario` VARCHAR(45) NOT NULL,
   `NomMatr_Usuario` VARCHAR(45) NOT NULL,
-  `Rol_Usuario` ENUM ('Maestro','Estudiante'),
-  `Genero_Usuario` ENUM ('Masculino','Femenino'),
+  `Rol_Usuario` enum ('Maestro','Estudiante'),
+  `Genero_Usuario` enum('Masculino','Femenino'),
   `Nacimiento_Usuario` DATETIME NOT NULL,
+  `Nombre_usuario_Usuario` VARCHAR(45) NOT NULL,
   `Correo_Usuario` VARCHAR(45) NOT NULL,
   `Contrasena_Usuario` VARCHAR(45) NOT NULL,
   `Fecha_registro_Usuario` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `Nombre_usuario_Usuario` VARCHAR(45) NOT NULL,
+
   PRIMARY KEY (`ID_Usuario`));
   
-  drop table usuario;
- select * from usuario;
+  INSERT INTO usuario (`Foto_Usuario`,`Nombre_Usuario`, `NomPatr_Usuario`, `NomMatr_Usuario`,`Rol_Usuario`, `Genero_Usuario`, `Nacimiento_Usuario`, `Correo_Usuario`,  `Nombre_usuario_Usuario`,`Contrasena_Usuario`) VALUE (NULL,'Julio2', 'Zepeda', 'Soraya', 'Estudiante','Masculino', '1999-01-01 00:00:00', 'juliozep2@gmail.com', 'Phoenix', 'boxing');
   
+  select * from usuario;
+ 
+ select Contrasena_Usuario from usuario;
   
-  ALTER TABLE `proyecto_bdm`.`usuario` MODIFY `Foto_Usuario` LONGBLOB;
+
+  SELECT * FROM usuario WHERE 
+Contrasena_Usuario='tanner';
+
+ SELECT * FROM usuario WHERE Nombre_Usuario='Jameson'and
+Rol_Usuario='Maestro';
+  
+  ALTER TABLE `proyecto_bdm`.`usuario` MODIFY `Foto_Usuario` BLOB NULL;
   
   
   INSERT INTO `proyecto_bdm`.`usuario` (`Nombre_Usuario`, `NomPatr_Usuario`, `NomMatr_Usuario`, `Genero_Usuario`, `Nacimiento_Usuario`, `Correo_Usuario`, `Contrasena_Usuario`, `Nombre_usuario_Usuario`) VALUES ('Julio', 'Zepeda', 'Soraya', 'M', '1999-01-01 00:00:00', 'juliozep@gmail.com', 'Admin?123', 'Admin');
@@ -34,10 +44,12 @@ CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`usuario` (
   
 ALTER TABLE `proyecto_bdm`.`usuario` ADD `Nickname_Usuario` VARCHAR(45) NOT NULL;
 
+ALTER TABLE `proyecto_bdm`.`usuario` MODIFY COLUMN`Contrasena_Usuario` VARCHAR(45);
+
+select * from `proyecto_bdm`.`usuario` where `Password_Usuario` ='kitty';
 
 
-
-alter table `proyecto_bdm`.`usuario` drop column `Nickname_Usuario`;
+alter table `proyecto_bdm`.`usuario` drop column `Password_Usuario`;
   
   select * from `proyecto_bdm`.`usuario`;
   

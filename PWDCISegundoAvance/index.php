@@ -7,11 +7,7 @@ if(!isset($_SESSION['Nombre_Usuario'])){
 }
 
 ?>
-<h1>Lo Lograste</h1><br><br>
 
-<h1>Bienvenido  <?php echo $_SESSION['Nombre_Usuario']; ?></h1>
-
-<a href="logout.php">Desconectar</a>
 
 
 
@@ -118,9 +114,9 @@ if(!isset($_SESSION['Nombre_Usuario'])){
     <div class="user-info">
       <img src="img/ProfilePicture.png">
       
-      <p>Estudiante</p>
+      <p> Estudiante</p>
     <br>
-      <h3>Carlos Villagran</h3>
+      <h3><?php echo $_SESSION['Nombre_Usuario']; ?></h3>
       
     </div>
     <hr>
@@ -143,7 +139,7 @@ if(!isset($_SESSION['Nombre_Usuario'])){
     </a>
 
 
-      <a href="#" class="sub-menu-link">
+      <a href="logout.php" class="sub-menu-link">
 
         <img src="img/Logout.png">
         <p>Cerrar Sesion</p>

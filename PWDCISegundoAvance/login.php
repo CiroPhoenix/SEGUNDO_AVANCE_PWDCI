@@ -13,7 +13,7 @@ if(isset($_POST["submit"])){
     $Correo_Usuario=$_POST["Correo_Usuario"];
     $Contrasena_Usuario=($_POST["Contrasena_Usuario"]);
 
-    $sql="SELECT * FROM `proyecto_bdm`.`usuario` WHERE 
+    $sql="SELECT * FROM usuario WHERE 
     Correo_Usuario='$Correo_Usuario' AND Contrasena_Usuario='$Contrasena_Usuario'";
     $result= mysqli_query($conn,$sql);
      
@@ -32,7 +32,6 @@ if(isset($_POST["submit"])){
 }
 
 ?>
-
 
 
 
@@ -62,7 +61,7 @@ if(isset($_POST["submit"])){
 
                 <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="password" placeholder="Contraseña" name="Contrasena_Usuario" value="<?php echo $Contrasena_Usuario; ?>">
+                        <input type="text" placeholder="Contraseña" name="Contrasena_Usuario" value="<?php echo $Contrasena_Usuario; ?>">
         
                     </div>
 

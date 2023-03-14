@@ -19,19 +19,19 @@ if(isset($_POST["submit"])){
     $Genero_Usuario=$_POST["Genero_Usuario"];
     $Nacimiento_Usuario=$_POST["Nacimiento_Usuario"];
     $Correo_Usuario=$_POST["Correo_Usuario"];
+    $Nombre_usuario_Usuario=$_POST["Nombre_usuario_Usuario"];
     $Contrasena_Usuario=$_POST["Contrasena_Usuario"];
     $cContrasena_Usuario=$_POST["cContrasena_Usuario"];
-    $Nombre_usuario_Usuario=$_POST["Nombre_usuario_Usuario"];
+    
 
     if($Contrasena_Usuario==$cContrasena_Usuario){
-        $sql="SELECT * FROM `proyecto_bdm`.`usuario` WHERE 
+        $sql="SELECT * FROM usuario WHERE 
         Correo_Usuario='$Correo_Usuario'";
         $result=mysqli_query($conn,$sql);
         if(!$result->num_rows > 0){
 
-            $sql="INSERT INTO `proyecto_bdm`.`usuario`
-            (Foto_Usuario,Nombre_Usuario,NomPatr_Usuario,NomMatr_Usuario,Rol_Usuario,Genero_Usuario,Nacimiento_Usuario,Correo_Usuario,Contrasena_Usuario,Nombre_usuario_Usuario)
-            VALUE ('$Foto_Usuario','$Nombre_Usuario','$NomPatr_Usuario','$NomMatr_Usuario','$Rol_Usuario',' $Genero_Usuario','$Nacimiento_Usuario','$Correo_Usuario',' $Contrasena_Usuario','$Nombre_usuario_Usuario')";
+            $sql="INSERT INTO usuario (`Foto_Usuario`,`Nombre_Usuario`, `NomPatr_Usuario`, `NomMatr_Usuario`,`Rol_Usuario`, `Genero_Usuario`, `Nacimiento_Usuario`, `Correo_Usuario`,`Nombre_usuario_Usuario`, `Contrasena_Usuario`)
+            VALUE ('$Foto_Usuario','$Nombre_Usuario','$NomPatr_Usuario','$NomMatr_Usuario','$Rol_Usuario','$Genero_Usuario','$Nacimiento_Usuario','$Correo_Usuario','$Nombre_usuario_Usuario','$Contrasena_Usuario')";
             $result=mysqli_query($conn,$sql);
 
             if($result){
@@ -45,9 +45,10 @@ if(isset($_POST["submit"])){
                 $Genero_Usuario="";
                 $Nacimiento_Usuario="";
                 $Correo_Usuario="";
+                $Nombre_usuario_Usuario="";
                 $_POST["Contrasena_Usuario"]="";
                 $_POST["cContrasena_Usuario"]="";
-                $Nombre_usuario_Usuario="";
+             
             }else{
                 echo "<script>alert('Hubo un error')
                 </script>";
@@ -76,6 +77,7 @@ if(isset($_POST["submit"])){
     <title>Registrar Usuario</title>
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="css/estilo-registrer-login.css" />
+    
 
     <style>
 
@@ -168,9 +170,17 @@ if(isset($_POST["submit"])){
                 </div>
 
 
+
+                <div class="contenedor">
+            <div class="input-contenedor">
+                <input type="text" name="Nombre_usuario_Usuario" id="Nombre_usuario_Usuario" placeholder="Nickname">
+      
+            </div>
+
+
                 <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="password" name="Contrasena_Usuario" id="Contrasena_Usuario" placeholder="Contraseña">
+                        <input type="text" name="Contrasena_Usuario" id="Contrasena_Usuario" placeholder="Contraseña">
         
                     </div>
 
@@ -178,18 +188,13 @@ if(isset($_POST["submit"])){
 
                     <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="password" name="cContrasena_Usuario" id="cContrasena_Usuario" placeholder="Contraseña">
+                        <input type="text" name="cContrasena_Usuario" id="cContrasena_Usuario" placeholder="Contraseña">
         
                     </div>
 
 
                     
-            <div class="contenedor">
-            <div class="input-contenedor">
-                <input type="text" name="Nombre_usuario_Usuario" id="Nombre_usuario_Usuario" placeholder="Nickname">
-      
-            </div>
-
+          
 
               <input type="submit" value="Registrarse"  name="submit"  class="button">
               <p class="warnings" id="warnings"></p>
@@ -198,6 +203,7 @@ if(isset($_POST["submit"])){
 
         </div>
     </form>
-   
+    <script src="js/app.js"></script>
 </body>
+
 </html>
