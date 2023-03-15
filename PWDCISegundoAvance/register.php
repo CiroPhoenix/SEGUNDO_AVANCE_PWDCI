@@ -26,7 +26,7 @@ if(isset($_POST["Registrar"])){
 
     if($Contrasena_Usuario==$cContrasena_Usuario){
         $sql="SELECT * FROM usuario WHERE 
-        Correo_Usuario='$Correo_Usuario'OR Nombre_usuario_Usuario='$Nombre_usuario_Usuario'";
+        Correo_Usuario='$Correo_Usuario' OR Nombre_usuario_Usuario='$Nombre_usuario_Usuario' ";
         $result=mysqli_query($conn,$sql);
         if(!$result->num_rows > 0){
 
@@ -54,7 +54,7 @@ if(isset($_POST["Registrar"])){
                 </script>";
             }
         }else{
-            echo "<script>alert('El correo o el nickname ya existe')
+            echo "<script>alert('El correo o el usuario ya existe')
             </script>";
         }
     }else{
