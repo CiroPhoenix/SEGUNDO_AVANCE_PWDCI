@@ -21,7 +21,7 @@ reader.onload=function(){
 }
 
 }
-/*
+
 const usuario = document.getElementById("Nombre_Usuario")
 const usuario_paterno = document.getElementById("NomPatr_Usuario")
 const usuario_materno= document.getElementById("NomMatr_Usuario")
@@ -94,5 +94,5 @@ form.addEventListener("submit", e=>{
 
 
 })
-*/
+
 

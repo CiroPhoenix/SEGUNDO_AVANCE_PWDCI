@@ -10,7 +10,7 @@ if(isset($_SESSION["Nombre_Usuario"]))
     header("Location: index.php");
 }
 
-if(isset($_POST["submit"])){
+if(isset($_POST["Registrar"])){
     $Foto_Usuario=$_POST["Foto_Usuario"];
     $Nombre_Usuario=$_POST["Nombre_Usuario"];
     $NomPatr_Usuario=$_POST["NomPatr_Usuario"];
@@ -89,11 +89,14 @@ if(isset($_POST["submit"])){
 <body style="background-image: url('img/PLanetsBackground.webp'); background-repeat: no-repeat; background-size: cover;">
     <form class="formulario" action="" method="POST" id="form">
 
+
+
+
         <h1>Registrar</h1>
        
         <div class="contenedor">
             <div class="input-contenedor">
-                <input type="file" name="Foto_Usuario" id="Foto_Usuario" class="foto" required  accept="image/png, image/jpeg">
+                <input type="file" name="Foto_Usuario" id="Foto_Usuario" class="foto" required  accept="image/png, image/jpeg" required>
                 
                 
                 <div id="preview" class="styleImage">
@@ -158,7 +161,7 @@ if(isset($_POST["submit"])){
            
             <div class="contenedor">
                 <div class="input-contenedor">
-                    <input type="date" id="Nacimiento_Usuario" name="Nacimiento_Usuario">
+                    <input type="date" id="Nacimiento_Usuario" name="Nacimiento_Usuario" required>
     
                 </div>
 
@@ -166,7 +169,7 @@ if(isset($_POST["submit"])){
 
             <div class="contenedor">
                 <div class="input-contenedor">
-                    <input type="text" name="Correo_Usuario" id="Correo_Usuario" placeholder="Correo Electronico">
+                    <input type="text" name="Correo_Usuario" id="Correo_Usuario" placeholder="Correo Electronico"   pattern="(\W|^)[\w.\-]{0,25}@(yahoo|hotmail|gmail)\.com(\W|$)"  required>
     
                 </div>
 
@@ -174,14 +177,14 @@ if(isset($_POST["submit"])){
 
                 <div class="contenedor">
             <div class="input-contenedor">
-                <input type="text" name="Nombre_usuario_Usuario" id="Nombre_usuario_Usuario" placeholder="Nickname">
+                <input type="text" name="Nombre_usuario_Usuario" id="Nombre_usuario_Usuario" placeholder="Nickname"  required>
       
             </div>
 
 
                 <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="text" name="Contrasena_Usuario" id="Contrasena_Usuario" placeholder="Contraseña">
+                        <input type="text" name="Contrasena_Usuario" id="Contrasena_Usuario" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8}[^'\s]" required>
         
                     </div>
 
@@ -189,7 +192,7 @@ if(isset($_POST["submit"])){
 
                     <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="text" name="cContrasena_Usuario" id="cContrasena_Usuario" placeholder="Contraseña">
+                        <input type="text" name="cContrasena_Usuario" id="cContrasena_Usuario" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8}[^'\s]" required>
         
                     </div>
 
@@ -197,14 +200,14 @@ if(isset($_POST["submit"])){
                     
           
 
-              <input type="submit" value="Registrarse"  name="submit"  class="button">
+              <input type="submit" value="Registrarse"  name="Registrar"  class="button">
               <p class="warnings" id="warnings"></p>
               <p>Al registrarse aceptas nuestras condiciones de uso y politica de privacidad.</p>
               <p>¿Ya tienes cuenta?<a class="link" href="login.php">Iniciar Sesion</a></p>
 
         </div>
     </form>
-    
+   
 </body>
 
 </html>
