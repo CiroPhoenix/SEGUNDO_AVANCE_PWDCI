@@ -69,13 +69,14 @@ if(!isset($_SESSION['Nombre_Usuario'])){
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+            <ul class="navbar-nav ">
+              <li  class="nav-item" >
                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-              </li>
-              <li class="nav-item">
+              </li class="nav-item">
+              <li>
                 <a class="nav-link" href="#">Link</a>
               </li>
+              
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Cursos
